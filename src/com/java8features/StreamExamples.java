@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.IntSummaryStatistics;
 import java.util.List;
+import java.util.Map;
 import java.util.OptionalInt;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -111,6 +112,15 @@ public class StreamExamples {
 				  .collect(Collectors.averagingInt(Product::getProductId));
 		
 		System.out.println("averagePrice : "+averagePrice);
+		
+		Product[] products = productList.stream().toArray(Product[]::new);
+		
+		for(Product p : productList) {
+			System.out.println(p.toString());
+		}
+		
+		Map<String, List<Product>> map=productList.stream().collect(Collectors.groupingBy(Product::getProductName));
+		System.out.println(map);
 
 		
 		
