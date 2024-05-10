@@ -115,7 +115,7 @@ public class StreamExamples {
 		
 		Product[] products = productList.stream().toArray(Product[]::new);
 		
-		for(Product p : productList) {
+		for(Product p : products) {
 			System.out.println(p.toString());
 		}
 		
